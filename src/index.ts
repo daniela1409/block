@@ -1,13 +1,14 @@
 import express from 'express';
-import { hashController } from '../controllers/blockchainController';
+import { generateNonceToHash, hashController } from '../controllers/blockchainController';
+import route from './routes/routes';
+
 
 const app = express();
 const port = 3000;
 app.use(express.json());
-app.post('/hash', (req, res) => {
-  const hexHash: string = hashController(req.body.message);
-  res.send({'hash' : hexHash});
-});
+
+app.use('/api', route);
+
 
 app.listen(port, () => {
   console.log(`Servidor en ejecución en http://localhost:${port}`);
