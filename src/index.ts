@@ -1,12 +1,16 @@
 import express from 'express';
-import { generateNonceToHash, hashController } from '../controllers/blockchainController';
 import route from './routes/routes';
+import connectToDatabase from './database';
+import dotenv from 'dotenv';
 
-
+dotenv.config();
 const app = express();
 const port = 3000;
 app.use(express.json());
 
+connectToDatabase();
+
+console.log(process.env.URL_MONGODB)
 app.use('/api', route);
 
 
