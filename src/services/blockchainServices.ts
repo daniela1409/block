@@ -6,27 +6,6 @@ import BlockChain from '../model/BlockChain';
 
 export const getHashString = async (jsonTransaction: JSON) => {
     const tranaction = await generationTransaction(jsonTransaction);
-
-    // const hash = createHash('sha256');
-    // hash.update(tranaction);
-    // let tranactionDB = new Transaction();
-    // const hashHexa = hash.digest('hex');
-
-    // tranactionDB.timeStamp = Date.now();
-    // tranactionDB.datosAdicionales = jsonTransaction 
-    // tranactionDB.blockNumber = 1;
-    // tranactionDB.hash = hashHexa;
-
-    // try{
-    //     const tran = await tranactionDB.save();
-    //     //const prueba = await Transaction.findById('65eba7e8fa7d21180e772e18');
-    //     //console.log("prueba", prueba);
-    // }catch(error){
-    //     console.log(error);
-    // }
-    
-    
-    // return hashHexa;
 }
 
 export const generationTransaction = async(transactionJson: JSON) => {
@@ -127,25 +106,6 @@ export const undermineBlockService = async(blockId) => {
         const {hash, Nonce} = getNonceToHash(blockDB.hashMerkleRoot.concat(blockDB.hashPrevious));
         blockDB.hash = hash;
         blockDB.nonce = Nonce;
-        // if(blockChain){
-        //     if(blockDB.hash === undefined){
-        //         blockDB.hash = hash;
-        //         blockDB.nonce = Nonce;
-        //         // blockChain.hashPrevious = (blockDB.isTheGenesis) ? hash : blockChain.hashLastBlockOfChain;
-        //         // blockChain.hashLastBlockOfChain = blockDB.hash;
-        //         // blockChain.blockNumber = (blockDB.isTheGenesis && blockDB.hash === null) ? 1 : blockChain.blockNumber + 1;
-        //     }
-        // }else{
-        //     if(blockDB.hash === undefined){
-        //         blockDB.hash = hash;
-        //         blockDB.nonce = Nonce;
-        //         // blockChain = new BlockChain();
-        //         // blockChain.hashPrevious = blockChain.hashLastBlockOfChain;
-        //         // blockChain.hashLastBlockOfChain = blockDB.hash;
-        //         // blockChain.blockNumber =  blockChain.blockNumber + 1;
-        //     }
-        // }
-
         
         if(blockChain !== null){
             blockDB.timeStamp = Date.now();
