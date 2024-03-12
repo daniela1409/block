@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "51312bb1-82d0-48a5-8077-6ae8f324fe1f",
+		"name": "Blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24799743"
+	},
+	"item": [
+		{
+			"name": "sendTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"829837092\",\n    \"valueInWallet\": 5,\n    \"valueTransaction\": 2,\n    \"fee\": 0.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/sendTransaction",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sendTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNonce",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"hola, soy Daniela\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/findNonce",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"findNonce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBlocksToHash",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/getBlocks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getBlocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "undermineBlock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/undermineBlock/65ebf058c45bc85acc596c15",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"undermineBlock",
+						"65ebf058c45bc85acc596c15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBlocksReadyToConfirm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/getBlocksToConfirm",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getBlocksToConfirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmBlock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/toConfirmBlock/65ebf058c45bc85acc596c15",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"toConfirmBlock",
+						"65ebf058c45bc85acc596c15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

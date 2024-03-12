@@ -6,11 +6,11 @@ const route = express.Router();
 
 route.post('/undermineBlock/:blockId', async (req: express.Request, res: express.Response) => {
     const response = await undermineBlock(req);
-    res.status(200).send("prueba");
+    res.status(200).send("Se minó un bloque");
 });
 route.post('/sendTransaction', async (req, res) => {
     const hexHash = await hashController(req.body);
-    res.send({'hash' : hexHash});
+    res.status(200).send('Se envió transacción');
 });
 route.get('/getBlocks', async(req, res) => {
     const response =  await getBlocksController();

@@ -7,7 +7,7 @@
 /vendor
 /build
 /.idea
-.env
+# .env
 .env.backup
 .composer.lock
 .phpunit.result.cache
